@@ -12,6 +12,7 @@ public class Config {
     public static final String URL= PropertyReader.getProperties(ENV_PROPERTIES).getProperty("url");
     public static final String CHROME_DRIVER_PATH = PropertyReader.getProperties(ENV_PROPERTIES).getProperty("chrome.driver.path");
     public static final String FIREFOX_DRIVER_PATH = PropertyReader.getProperties(ENV_PROPERTIES).getProperty("firefox.driver.path");
+    public static final String PHANTOM_DRIVER_PATH = PropertyReader.getProperties(ENV_PROPERTIES).getProperty("phantom.driver.path");
     public static final String SUITE = PropertyReader.getProperties("common.properties").getProperty("suite");
 
     public static final String CHROME_WEBDRIVER_SYSTEM_PROPERTY = "webdriver.chrome.driver";

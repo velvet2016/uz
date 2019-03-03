@@ -10,12 +10,12 @@
     </appender>
 
     <logger name="pages" additivity="false">
-        <level value="DEBUG" />
+        <level value="ERROR"/>
         <appender-ref ref="console" />
     </logger>
 
     <root>
-        <level value="DEBUG" />
+        <level value="ERROR"/>
         <appender-ref ref="console" />
     </root>
 

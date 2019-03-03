@@ -10,12 +10,10 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import pages.SearchPage;
-;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.UUID;
-import java.util.concurrent.TimeUnit;
 
 
 public abstract   class AbstractTest {
@@ -51,7 +49,8 @@ public abstract   class AbstractTest {
     @AfterMethod
     public void takeScreenShotOnFailure(ITestResult testResult) throws IOException
     {
-        if (true/*testResult.getStatus() == ITestResult.FAILURE  && driver!=null*/) {
+        if (Config.BROWSER.equals(Browser.HTML_UNIT)) return;
+        if (testResult.getStatus() == ITestResult.FAILURE && driver != null) {
             File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
             FileUtils.copyFile(scrFile, new File("target/screenshots/"+testResult.getName()+".jpg"));
         }

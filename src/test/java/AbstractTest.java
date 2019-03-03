@@ -32,9 +32,7 @@ public abstract   class AbstractTest {
 
     protected SearchPage loadUz() {
         driver.get(Config.URL);
-
             return new SearchPage(driver);
-
     }
 
 //    private boolean isProfileIconPresented(WebDriver driver) {

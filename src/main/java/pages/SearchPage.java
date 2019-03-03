@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 
 
 public class SearchPage extends PageObject {
+    public static final String TITLE = "Online reservation and purchase tickets - Ukrzaliznytsia";
     @FindBy(name = "from-title")
     private WebElement inputFrom;
 
@@ -27,7 +28,7 @@ public class SearchPage extends PageObject {
 
     @Override
     protected String getExpectedTitle() {
-        return "Online reservation and purchase tickets - Ukrzaliznytsia";
+        return TITLE;
     }
 
     public void setFrom(String input){

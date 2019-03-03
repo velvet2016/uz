@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
+
 public abstract class PageObject {
     protected WebDriver driver;
 
@@ -21,9 +22,9 @@ public abstract class PageObject {
         logger.info("chekcing page title");
         String actualTitle = driver.getTitle();
         if (isCheckTitleNeeded() && !actualTitle.equals(getExpectedTitle())) {
-            throw new IllegalStateException("Page was not loaded. Expected page title " + getExpectedTitle() + "but actual: " + actualTitle);
+            throw new IllegalStateException("Page was not loaded. Expected page title " + getExpectedTitle() + " \nbut actual: " + actualTitle);
         }
-        logger.info("chekcing page title: Success");
+        logger.info("checking page title: Success");
         logger.info("Page loaded: " + this.getClass().getSimpleName());
     }
 
@@ -34,16 +35,11 @@ public abstract class PageObject {
 
     protected void waitForPresense(By by) throws Error {
         logger.debug("waiting till element " + by.toString() + " loaded");
-        new WebDriverWait(driver, Config.EXPLICIT_WAIT_SMALL).until(ExpectedConditions.visibilityOfElementLocated(by));
+        new WebDriverWait(driver, Config.EXPLICIT_WAIT_SMALL)
+                .until(ExpectedConditions.presenceOfElementLocated(by));
+        logger.debug("waiting till element " + by.toString() + " loaded...Done");
     }
 
-    private void waitForVisibilityWithSmallWait(WebElement element) {
-        int secondsToWait = Config.EXPLICIT_WAIT_SMALL;
-        String message = "waiting till element " + element.toString() + " become visible. Explicit wait = " + secondsToWait;
-        logger.debug(message);
-        new WebDriverWait(driver, secondsToWait).until(ExpectedConditions.visibilityOf(element));
-        logger.debug(message + "...Done");
-    }
 
 
     protected void logInputAction(String inputFieldName, String inputValue) {

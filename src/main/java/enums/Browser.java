@@ -44,7 +44,7 @@ public enum Browser {
             capabilities.setCapability(PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY, Config.PHANTOM_DRIVER_PATH);
             capabilities.setJavascriptEnabled(true);
             capabilities.setBrowserName(BrowserType.CHROME);
-            capabilities.setCapability(PhantomJSDriverService.PHANTOMJS_CLI_ARGS, "--webdriver-loglevel=ERROR");
+            capabilities.setCapability(PhantomJSDriverService.PHANTOMJS_CLI_ARGS, "--webdriver-loglevel=NONE");
             return new PhantomJSDriver(capabilities);
         }
     };

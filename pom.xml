@@ -12,7 +12,7 @@
     <properties>
         <config.env.properties>env.properties</config.env.properties>
         <config.cred.properties>role1.properties</config.cred.properties>
-        <config.browser>PHANTOM</config.browser>
+        <config.browser>CHROME_HEADLESS</config.browser>
         <config.resource.dir>src/main/resources/</config.resource.dir>
         <config.suite>suite1.xml</config.suite>
     </properties>

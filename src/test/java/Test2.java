@@ -1,5 +1,6 @@
 import org.testng.annotations.Test;
 import pages.SearchPage;
+import pages.SearchPageSimple;
 
 public class Test2 extends AbstractTest{
 

@@ -10,11 +10,11 @@
 
 
     <properties>
-        <config.env.properties>env.properties</config.env.properties>
-        <config.cred.properties>role1.properties</config.cred.properties>
-        <config.browser>CHROME_HEADLESS</config.browser>
+        <env_props>env.properties</env_props>
+        <cred_props>role1.properties</cred_props>
+        <browser>CHROME_HEADLESS</browser>
         <config.resource.dir>src/main/resources/</config.resource.dir>
-        <config.suite>suite1.xml</config.suite>
+        <suite>suite1.xml</suite>
     </properties>
 
     <dependencies>
@@ -76,7 +76,7 @@
                 <version>2.19.1</version>
                 <configuration>
                     <suiteXmlFiles>
-                        <suiteXmlFile>${config.resource.dir}${config.suite}</suiteXmlFile>
+                        <suiteXmlFile>${config.resource.dir}${suite}</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>

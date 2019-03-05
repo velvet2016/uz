@@ -48,5 +48,7 @@ processResources {
 
 
 test {
-    useTestNG()
+    useTestNG(){
+       suites "src/main/resources/${c_suite}"
+    }
 }

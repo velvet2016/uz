@@ -45,7 +45,8 @@ public abstract   class AbstractTest {
     public void takeScreenShotOnFailure(ITestResult testResult) throws IOException
     {
         if (Config.BROWSER.equals(Browser.HTML_UNIT)) return;
-        if (testResult.getStatus() == ITestResult.FAILURE && driver != null) {
+        if (true){
+        //if (testResult.getStatus() == ITestResult.FAILURE && driver != null) {
             File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
             FileUtils.copyFile(scrFile, new File("target/screenshots/"+testResult.getName()+".jpg"));
         }

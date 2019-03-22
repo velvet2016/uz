@@ -47,6 +47,7 @@ public abstract   class AbstractTest {
         if (Config.BROWSER.equals(Browser.HTML_UNIT)) return;
         if (true){
 
+
         //if (testResult.getStatus() == ITestResult.FAILURE && driver != null) {
             File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
             FileUtils.copyFile(scrFile, new File("target/screenshots/"+testResult.getName()+".jpg"));

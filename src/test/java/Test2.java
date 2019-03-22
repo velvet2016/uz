@@ -1,7 +1,6 @@
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pages.SearchPage;
-import pages.SearchPageSimple;
 
 @Listeners(ListenerClass.class)
 public class Test2 extends AbstractTest{

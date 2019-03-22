@@ -33,11 +33,12 @@ public abstract class PageObject {
     private final Logger logger = Logger.getLogger(this.getClass());
 
 
-    protected void waitForPresense(By by) throws Error {
+    protected WebElement waitForPresense(By by, int secondToWait) throws Error {
         logger.debug("waiting till element " + by.toString() + " loaded");
-        new WebDriverWait(driver, Config.EXPLICIT_WAIT_SMALL)
+        WebElement elementToWait = new WebDriverWait(driver, secondToWait)
                 .until(ExpectedConditions.presenceOfElementLocated(by));
         logger.debug("waiting till element " + by.toString() + " loaded...Done");
+        return elementToWait;
     }
 
 

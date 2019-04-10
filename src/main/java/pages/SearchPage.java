@@ -81,7 +81,7 @@ public class SearchPage extends PageObject {
         Locale locale = new Locale(PropertyReader
                 .getProperties(Config.LANG_PROPERTIES)
                 .getProperty(Constants.PROPERTY_FILE_KEY_LANGUAGE));
-        String monthName = date.getMonth().getDisplayName(TextStyle.FULL_STANDALONE,
+        String monthName = date.getMonth().getDisplayName(TextStyle.FULL,
                 locale);
         String capitalizedMonthName = StringUtils.capitalize(monthName);
          waitForPresense(By.xpath(
